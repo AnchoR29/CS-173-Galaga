@@ -1,17 +1,22 @@
-import java.util.Vector;
-import java.util.*;
-import java.io.*;
-import java.lang.*;
+//import java.util.Vector;
+//import java.util.*;
+//import java.io.*;
+//import java.lang.*;
 import java.awt.*;
-import java.awt.event.*;
+//import java.awt.event.*;
 import java.awt.image.*;
-import javax.swing.*;
-import javax.imageio.*;
-import java.net.*;
+//import javax.swing.*;
+//import javax.imageio.*;
+//import java.net.*;
 
 public class EnemyGreen extends Sprites
 {
-    //********************************************************************
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8811958177245161457L;
+
+	//********************************************************************
     //  Constant
     //********************************************************************
     //  Score for each kill of this type of ship

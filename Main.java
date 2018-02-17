@@ -1,7 +1,7 @@
 
 import java.util.*;
-import java.io.*;
-import java.lang.*;
+//import java.io.*;
+//import java.lang.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
@@ -9,13 +9,17 @@ import javax.swing.*;
 import javax.imageio.*;
 import java.net.*;
 import java.awt.geom.CubicCurve2D;
-import java.awt.geom.Ellipse2D;
+//import java.awt.geom.Ellipse2D;
 import java.awt.geom.FlatteningPathIterator;
 import java.awt.geom.PathIterator;
 import java.awt.geom.Area;
 
 public class Main extends JPanel implements Runnable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2185745315084852434L;
 	private JMenuBar menuBar;
 	private JMenu menu;
 	private JMenuItem[] menuItem = new JMenuItem[4];
@@ -53,8 +57,8 @@ public class Main extends JPanel implements Runnable{
 
 	private boolean right = false;
 	private boolean left = false;
-	private boolean up = false;
-	private boolean down = false;
+//	private boolean up = false;
+//	private boolean down = false;
 
 	private boolean isGameStart = false;
 	private boolean isWon = false;
@@ -500,7 +504,7 @@ public class Main extends JPanel implements Runnable{
 		}
 
 		public void keyTyped(KeyEvent e){
-			int keyCode = e.getKeyCode();
+//			int keyCode = e.getKeyCode();
 
 		}
 	}
@@ -648,7 +652,7 @@ public class Main extends JPanel implements Runnable{
         }
 
 
-			int index = (int)(Math.random() * size); // pick one random ship from the array
+//			int index = (int)(Math.random() * size); // pick one random ship from the array
 
 			//  For each ship in the vector
 			for(int i = 0; i < size; i++)
@@ -790,7 +794,7 @@ public class Main extends JPanel implements Runnable{
 
 
 	public static void main(String[] args){
-		Main game = new Main();
+		new Main();
 	}
 
     public static BufferedImage resize(BufferedImage image, int width, int height) {

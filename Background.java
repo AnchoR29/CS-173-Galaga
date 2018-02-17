@@ -1,6 +1,6 @@
 import java.awt.*;
-import java.util.*;
-import java.io.*;
+//import java.util.*;
+//import java.io.*;
 
 public class Background{
 	final int NUM_STARS = 28;

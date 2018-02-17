@@ -1,17 +1,23 @@
-import java.util.Vector;
-import java.util.*;
-import java.io.*;
-import java.lang.*;
+//import java.util.Vector;
+//import java.util.*;
+//import java.io.*;
+//import java.lang.*;
 import java.awt.*;
-import java.awt.event.*;
+//import java.awt.event.*;
 import java.awt.image.*;
 import javax.swing.*;
-import javax.imageio.*;
-import java.net.*;
+//import javax.imageio.*;
+//import java.net.*;
 
 
 public class PlayerShip extends Sprites{
-    //********************************************************************
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1337927474831508197L;
+
+
+	//********************************************************************
     //  Constructor - Assigns Variables as needed and starts the massive
     //    for-loops that initialize the image
     //********************************************************************

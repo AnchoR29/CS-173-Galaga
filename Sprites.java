@@ -1,19 +1,24 @@
 
 import java.util.Vector;
-import java.util.*;
-import java.io.*;
-import java.lang.*;
+//import java.util.*;
+//import java.io.*;
+//import java.lang.*;
 import java.awt.*;
-import java.awt.event.*;
+//import java.awt.event.*;
 import java.awt.image.*;
 import javax.swing.*;
-import javax.imageio.*;
-import java.net.*;
+//import javax.imageio.*;
+//import java.net.*;
 
 
 public class Sprites extends JLabel
 {
-    //  Holds the generated image
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6541711507284205192L;
+
+	//  Holds the generated image
     BufferedImage image;
 
     //  Integers for dealing with the image's placement
@@ -194,7 +199,7 @@ public class Sprites extends JLabel
     //  Method that iterates the ship's X and Y coordinates along the retreating
     //   curve
     //******************************************************************************
-    public void attackShip(Vector enemyBullets, PlayerShip player)
+    public void attackShip(Vector<?> enemyBullets, PlayerShip player)
     {
         for(int i = 0; i < attackPoints.length; i++)
         {
