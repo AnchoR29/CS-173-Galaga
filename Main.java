@@ -610,7 +610,6 @@ public class Main extends JPanel implements Runnable{
 		}
 		else{
 			life--;
-			dead = true;
 		}
 	}
 
