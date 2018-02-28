@@ -380,7 +380,7 @@ public class Main extends JPanel implements Runnable{
         g.setColor(Color.BLUE);
         g.setFont(text);
 
-		if(isDelayRunning && dead){
+		if(isDelayRunning && !dead){
 			g.drawString("You got hit. Be careful!", d.width / 4 + 75, d.height / 2);
 		}
 
@@ -605,6 +605,7 @@ public class Main extends JPanel implements Runnable{
 			player = null;
 			isGameStart = false;
 			isLose = true;
+			dead = true;
 			// do stuff here
 
 		}
