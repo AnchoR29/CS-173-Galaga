@@ -50,7 +50,8 @@ public class Main extends JPanel implements Runnable{
 	private BufferedImage[] playerLife = new BufferedImage[3];
 
 	private int life = 3;
-	private int score = 0;
+	private long strt = 0;
+	private long score = 0;
 	private int level = 1;
 	private int enemySize = 8;
 	private int attackers = 1;
@@ -74,7 +75,7 @@ public class Main extends JPanel implements Runnable{
 
 	// Constructor
 	public Main(){
-
+		
 		// Set Frame properties
 		frame = new JFrame();
 		frame.setTitle("Galaga Woo");
@@ -172,6 +173,7 @@ public class Main extends JPanel implements Runnable{
 			// this can be put in other threads
 			starfield.moveBackground();
 			if(isGameStart == true){
+				score = (System.currentTimeMillis() - strt)/1000;
 				moveEnemyShips(green, enemySize);
 				moveEnemyShips(black, enemySize);
 				moveEnemyShips(red, enemySize);
@@ -380,13 +382,18 @@ public class Main extends JPanel implements Runnable{
         g.setColor(Color.BLUE);
         g.setFont(text);
 
-		if(isDelayRunning && dead){
+		if(isDelayRunning && !dead){
 			g.drawString("You got hit. Be careful!", d.width / 4 + 75, d.height / 2);
 		}
 
 		g.setColor(Color.WHITE);
-		g.drawString("Score:  " + score, 20, 20);
-
+		if(score > 1) {
+			g.drawString("Time Elapsed:  " + score + " seconds", 20, 20);
+		}
+		else {
+			g.drawString("Time Elapsed:  " + score + " second", 20, 20);
+		}
+		
 		if(isGameStart == false && isWon == false && isLose == false){
 			Font start = new Font("KenVector Future Thin", Font.PLAIN, 24);
 			g.setFont(start);
@@ -406,8 +413,13 @@ public class Main extends JPanel implements Runnable{
 			Font lose = new Font("KenVector Future Thin", Font.PLAIN, 24);
 			g.setFont(lose);
 			g.setColor(Color.RED);
-			g.drawString("Score: " + score, d.width / 2 - 100, d.height / 2);
-			g.drawString("You just lost. Weakling.", d.width / 4, d.height / 2 + 30);
+			if(score > 1) {
+				g.drawString("Time Elapsed: " + score + " seconds", d.width / 2 - 150, d.height / 2);
+			}
+			else {
+				g.drawString("Time Elapsed: " + score + " second", d.width / 2 - 150, d.height / 2);
+			}
+			g.drawString("You just lost. Weakling.", d.width / 4 + 40, d.height / 2 + 30);
 		}
 
 		Font controls = new Font("Calibri", Font.PLAIN, 12);
@@ -462,7 +474,7 @@ public class Main extends JPanel implements Runnable{
 				if(keyCode == KeyEvent.VK_C){
 					// Save level, because it is cleared in clear
 					int temp = level + 1;
-					int temp2 = score;
+					long temp2 = score;
 					//int temp3 = attackers;
 					isLoading = true;
 
@@ -480,6 +492,7 @@ public class Main extends JPanel implements Runnable{
 
 			if(keyCode == KeyEvent.VK_ENTER){
 				isGameStart = true;
+				strt = System.currentTimeMillis();
 			}
 
 			if(keyCode == KeyEvent.VK_R){
@@ -557,7 +570,6 @@ public class Main extends JPanel implements Runnable{
 				for(int j = 0; j < size; j++){
 					if(enemyShip[j] != null){
 						if(intersects(enemyShip[j], pBullet[i]) == true){
-							score+=enemyShip[j].getScore();
 							enemyShip[j] = null;
 							pBullet[i] = null;
 							break;
@@ -605,6 +617,7 @@ public class Main extends JPanel implements Runnable{
 			player = null;
 			isGameStart = false;
 			isLose = true;
+			dead = true;
 			// do stuff here
 
 		}
