@@ -67,7 +67,8 @@ public class Main extends JPanel implements Runnable{
 	private boolean dead = false;
 	private boolean isDelayRunning = false;
 	private boolean isLoading = false;
-
+	private boolean isNewGame = true;	
+		
 	private boolean isDeadEnemies = false;
 
 	int randomFireTime = (int) (((Math.random() * RANDOM_FIRE_SEED) + 1) + 30);
@@ -472,6 +473,7 @@ public class Main extends JPanel implements Runnable{
 
 			if(isWon == true){
 				if(keyCode == KeyEvent.VK_C){
+					isNewGame = false;
 					// Save level, because it is cleared in clear
 					int temp = level + 1;
 					long temp2 = score;
@@ -491,11 +493,16 @@ public class Main extends JPanel implements Runnable{
 			}
 
 			if(keyCode == KeyEvent.VK_ENTER){
-				isGameStart = true;
-				strt = System.currentTimeMillis();
+				if(!dead){
+					isGameStart = true;
+					if(isNewGame) {
+						strt = System.currentTimeMillis();
+					}
+				}
 			}
 
 			if(keyCode == KeyEvent.VK_R){
+				isNewGame = true;
 				isGameStart = false;
 				isLoading = true;
 				clear();
