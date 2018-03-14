@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="CS 173 UPDATED/src/main/java"/>
+	<classpathentry kind="src" path="CS 173 UPDATED/src/test/java"/>
+	<classpathentry kind="lib" path="CS 173 UPDATED/target/Galaga-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="jl1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marnoel/Documents/GALAGA PREFINALFINAL/jl1.0.1.jar"/>
+	<classpathentry kind="output" path="CS 173 UPDATED/target/classes"/>
 </classpath>
